@@ -42,5 +42,61 @@ public class DeliveryTickets {
 		TimeDate = timeDate;
 	}
 
+	public String getEstDepartureTime() {
+		return EstDepartureTime;
+	}
+
+	public void setEstDepartureTime(String estDepartureTime) {
+		EstDepartureTime = estDepartureTime;
+	}
+
+	public int getBillAmount() {
+		return billAmount;
+	}
+
+	public void setBillAmount(int billAmount) {
+		this.billAmount = billAmount;
+	}
+
+	public String getEstDeliveryTime() {
+		return EstDeliveryTime;
+	}
+
+	public void setEstDeliveryTime(String estDeliveryTime) {
+		EstDeliveryTime = estDeliveryTime;
+	}
+
+	public String getActDepartureTime() {
+		return ActDepartureTime;
+	}
+
+	public void setActDepartureTime(String actDepartureTime) {
+		ActDepartureTime = actDepartureTime;
+	}
+
+	public String getActPickUpTime() {
+		return ActPickUpTime;
+	}
+
+	public void setActPickUpTime(String actPickUpTime) {
+		ActPickUpTime = actPickUpTime;
+	}
+
+	public String getActDeliveryTime() {
+		return ActDeliveryTime;
+	}
+
+	public void setActDeliveryTime(String actDeliveryTime) {
+		ActDeliveryTime = actDeliveryTime;
+	}
+
+	public String getActReturnTime() {
+		return ActReturnTime;
+	}
+
+	public void setActReturnTime(String actReturnTime) {
+		ActReturnTime = actReturnTime;
+	}
+
 
 }

@@ -9,5 +9,11 @@ public class Route {
 	public void setCrateDate(String crateDate) {
 		this.crateDate = crateDate;
 	}
+	public String getCreateTime() {
+		return createTime;
+	}
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
+	}
 
 }

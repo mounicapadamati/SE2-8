@@ -29,7 +29,7 @@ public class Login extends JPanel {
 		add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("username");
-		lblNewLabel_1.setBounds(48, 86, 46, 14);
+		lblNewLabel_1.setBounds(48, 86, 81, 14);
 		add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("password");
@@ -37,12 +37,12 @@ public class Login extends JPanel {
 		add(lblNewLabel_2);
 		
 		username = new JTextField();
-		username.setBounds(139, 83, 86, 20);
+		username.setBounds(139, 83, 86, 23);
 		add(username);
 		username.setColumns(10);
 		
 		password = new JPasswordField();
-		password.setBounds(139, 139, 86, 27);
+		password.setBounds(139, 139, 89, 23);
 		add(password);
 		
 		JButton btnLogin = new JButton("Login");
@@ -54,7 +54,7 @@ public class Login extends JPanel {
 				System.out.println("************"+uname+"**********"+psd);
 				try {
 					Connection conn= DAO.getConnection();
-					PreparedStatement ps=conn.prepareStatement("select * from reg where username=? and password=?");
+					PreparedStatement ps=conn.prepareStatement("select * from reg where user_name=? and password=?");
 					ps.setString(1, uname);
 					ps.setString(2, psd);
 					ResultSet rs=ps.executeQuery();

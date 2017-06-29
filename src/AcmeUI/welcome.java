@@ -14,6 +14,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.event.MenuListener;
 import javax.swing.event.MenuEvent;
+import javax.swing.JLabel;
 
 public class welcome extends JFrame {
 
@@ -68,6 +69,9 @@ public class welcome extends JFrame {
 			public void menuDeselected(MenuEvent e) {
 			}
 			public void menuSelected(MenuEvent e) {
+				getContentPane().removeAll();
+				getContentPane().add(new DeliveryTicket(f));
+				getContentPane().revalidate();
 			}
 		});
 		menuBar.add(mnNewMenu_1);
@@ -112,17 +116,48 @@ public class welcome extends JFrame {
 		menuBar.add(mnNewMenu_4);
 		
 		JMenuItem mntmNewMenuItem = new JMenuItem("Courier Report");
+		mntmNewMenuItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				getContentPane().removeAll();
+				getContentPane().add(new CourierReport(f));
+				getContentPane().revalidate();
+			}
+		});
 		mnNewMenu_4.add(mntmNewMenuItem);
+		getContentPane().removeAll();
+		getContentPane().add(new CourierReport(f));
+		getContentPane().revalidate();
 		
 		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Delivery Ticket Report");
+		mntmNewMenuItem_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				getContentPane().removeAll();
+				getContentPane().add(new DeliveryTicketsReport(f));
+				getContentPane().revalidate();
+			}
+		});
 		mnNewMenu_4.add(mntmNewMenuItem_1);
+		getContentPane().removeAll();
+		getContentPane().add(new DeliveryTicketsReport(f));
+		getContentPane().revalidate();
 		
 		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Invoice Report");
+		mntmNewMenuItem_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			getContentPane().removeAll();
+			getContentPane().add(new InvoiceReport(f));
+			getContentPane().revalidate();
+				
+			}
+		});
 		mnNewMenu_4.add(mntmNewMenuItem_2);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
+		getContentPane().removeAll();
+		getContentPane().add(new InvoiceReport(f));
+		getContentPane().revalidate();
 		
 		JPanel panel = new JPanel();
 		contentPane.add(panel, BorderLayout.SOUTH);
@@ -159,6 +194,9 @@ public class welcome extends JFrame {
 			}
 		});
 		panel.add(btnNewButton_1);
+		
+		JLabel lblNewLabel = new JLabel("ACME COURIER SERVICE DELIVERY SYSTEM");
+		contentPane.add(lblNewLabel, BorderLayout.CENTER);
 		
 	}
 

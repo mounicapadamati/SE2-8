@@ -273,9 +273,9 @@ public class UserInfoScreen extends JPanel {
 								}
 					
 								if (addedit.equals("Add")){
-								ps=cn.prepareStatement("INSERT INTO userinfo values('" + txtName.getText() + "','" + role +  "','" + txtAddress.getText() + "','" + txtEmail.getText() + "')");
+								ps=cn.prepareStatement("INSERT INTO userinfo values('" + txtName.getText() + "','" +  txtAddress.getText() +  "','" +role + "','" + txtEmail.getText() + "')");
 								}else{
-									ps=cn.prepareStatement("UPDATE userinfo set username='" + txtName.getText() + "',user_rol ='" + role +  "',contact ='" + txtAddress.getText() + "',email='"+txtEmail.getText()+"' where username ='" + txtSearch.getText() + "'");	
+									ps=cn.prepareStatement("UPDATE userinfo set username='" + txtName.getText() + "',user_role ='" + role +  "',contact_number ='" + txtAddress.getText() + "',email='"+txtEmail.getText()+"' where username ='" + txtSearch.getText() + "'");	
 								}
 								ps.executeUpdate();
 				
@@ -418,7 +418,7 @@ public class UserInfoScreen extends JPanel {
 				tblModel.getDataVector().removeAllElements();
 				while(rs.next()){
 					
-					tblModel.addRow(new Object[]{rs.getString("username"),rs.getString("user_rol"),rs.getString("contact"),rs.getString("email")});
+					tblModel.addRow(new Object[]{rs.getString("username"),rs.getString("user_role"),rs.getString("contact_number"),rs.getString("email")});
 				}
 				
 				
@@ -440,14 +440,14 @@ public class UserInfoScreen extends JPanel {
 			 	//strPass=rs.getString(2);
 				if(rs.next()){
 	txtName.setText(rs.getString("username").toString());
-	if (rs.getString("user_rol").toString().equals("OrderTracker")){
+	if (rs.getString("user_role").toString().equals("OrderTaker")){
 		cboGender.setSelectedIndex(0);
 	}else{
 		cboGender.setSelectedIndex(1);
 	}
 
 
-	txtAddress.setText(rs.getString("contact").toString());
+	txtAddress.setText(rs.getString("contact_number").toString());
 	txtEmail.setText(rs.getString("email").toString());
 		}else{
 

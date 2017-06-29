@@ -16,7 +16,7 @@ public class SignupConfirmation extends JPanel {
 		setLayout(null);
 		
 		JLabel lblCongratulationYourNew = new JLabel("Congratulation! Your new username is "+ u.getFullName());
-		lblCongratulationYourNew.setBounds(48, 131, 303, 24);
+		lblCongratulationYourNew.setBounds(48, 131, 358, 24);
 		add(lblCongratulationYourNew);
 		
 		JButton btnNewButton = new JButton("Login");
